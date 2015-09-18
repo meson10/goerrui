@@ -17,15 +17,15 @@ var Levels = struct {
 	Message  int
 }{50, 40, 30, 20, 10}
 
-var logLevel = Levels.Warn
+var LogLevel = Levels.Warn
 
 func SetLevel(level int) {
-	logLevel = level
+	LogLevel = level
 }
 
 //50
 func Alert(format string, a ...interface{}) {
-	if logLevel > Levels.Alert {
+	if LogLevel > Levels.Alert {
 		return
 	}
 
@@ -36,7 +36,7 @@ func Alert(format string, a ...interface{}) {
 
 //10
 func Message(format string, a ...interface{}) {
-	if logLevel > Levels.Message {
+	if LogLevel > Levels.Message {
 		return
 	}
 
@@ -47,7 +47,7 @@ func Message(format string, a ...interface{}) {
 
 //30
 func Warn(format string, a ...interface{}) {
-	if logLevel > Levels.Warn {
+	if LogLevel > Levels.Warn {
 		return
 	}
 
